@@ -8,6 +8,7 @@
 .card {
     display: grid;
     place-items: center;
+    box-sizing: border-box;
 }
 
 .card-shadow {
@@ -18,7 +19,34 @@
 .card-body {
     display: grid;
     place-items: center;
-    gap: 10px;
+    gap: 22px;
+}
+
+.input-field {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+}
+
+input {
+    padding: 5px;
+
+    text-align: center;
+
+    outline: none;
+    border: none;
+
+    border-bottom: 1.5px solid #000;
+    border-right: 1.5px solid #000;
+}
+input:active {
+    /* empty yet */
+}
+input:focus {
+    outline: 1px solid #000;
+    color: #00f;
 }
 
 @media (min-width : 500px) {
@@ -37,3 +65,8 @@
         border-top-left-radius: 12px;
     }
 }
+
+/* @keyframes test {
+    100% {
+    }
+} */
