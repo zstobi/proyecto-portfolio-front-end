@@ -12,6 +12,8 @@ import { TechsComponent } from './components/sections/techs/techs.component';
 import { SsComponent } from './components/sections/ss/ss.component';
 import { IdiomsComponent } from './components/sections/idioms/idioms.component';
 import { FooterComponent } from './components/sections/footer/footer.component';
+import { HeaderComponent } from './components/sections/header/header.component';
+import { NavBarComponent } from './components/sections/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { FooterComponent } from './components/sections/footer/footer.component';
     TechsComponent,
     SsComponent,
     IdiomsComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
