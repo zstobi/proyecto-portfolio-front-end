@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* diseno de selectores */
+*::selection {
+    background-color: rgba(0,0,0,.125);
+    color: #000;
+}
+
+/* smooth scroll */
+* {
+    scroll-behavior: smooth;
+}
+
+/* agrega sombras al borde de cada componente */
+.col{
+    border-radius: 12px;
+    /* este border radius debe ser solo para determinadas resoluciones */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2),
+    -4px -4px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* modifica los links */
+a {
+    text-decoration: none!important;
+
+    color: black!important;
+}
+
+a:hover {
+    color: #00f!important;
+}

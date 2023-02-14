@@ -1,0 +1,17 @@
+/* modifica el cuerpo del despliegue por ingles */
+.accordion-body {
+    user-select: none;
+    
+    padding: 5px;
+}
+
+/* modifica el li de la opcion ingles */
+.accordion-button:not(.collapsed) {
+    background-color: inherit;
+    color: #000;
+}
+
+/* color de letra de ingles luego del despliegue */
+.accordion-button::after {
+    color: #000;
+}

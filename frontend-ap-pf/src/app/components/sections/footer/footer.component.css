@@ -1,0 +1,6 @@
+.to-top {
+    margin-bottom: 22px;
+
+    display: grid;
+    place-items: center;
+}

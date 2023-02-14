@@ -1,0 +1,206 @@
+    /* edicion de banner */
+    .banner {
+        background-image: linear-gradient(to right, #434343 0%, black 100%); color: transparent;
+        height: 230px;
+    }
+
+    /* profilepic */
+
+    .tobi {
+        border-radius: 100%;
+    
+        border-bottom: 6px solid rgba(0, 0, 0, 0.125);
+        /* box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.404); */
+    }
+    
+    @media (min-width : 1700px) {
+        
+        .tobi {
+            position: absolute;
+            top: 120px;
+            left: 400px;
+    
+            height: 200px;
+            width: 220px;
+        }
+    }
+    
+    @media (min-width : 1600px) and (max-width : 1700px) {
+        
+        .tobi {
+            position: absolute;
+            top: 120px;
+            left: 330px;
+    
+            height: 200px;
+            width: 220px;
+        }
+    }
+    
+    @media (min-width : 1500px) and (max-width : 1600px) {
+        
+        .tobi {
+            position: absolute;
+            top: 120px;
+            left: 310px;
+    
+            height: 200px;
+            width: 220px;
+        }
+    }
+    
+    @media (min-width : 1400px) and (max-width : 1500px) {
+        
+        .tobi {
+            position: absolute;
+            top: 120px;
+            left: 290px;
+    
+            height: 190px;
+            width: 210px;
+        }
+    }
+    
+    @media (min-width : 1300px) and (max-width : 1400px) {
+        
+        .tobi {
+            position: absolute;
+            top: 120px;
+            left: 270px;
+    
+            height: 190px;
+            width: 210px;
+        }
+    }
+    
+    @media (min-width : 1200px) and (max-width : 1300px) {
+        
+        .tobi {
+            position: absolute;
+            top: 120px;
+            left: 250px;
+    
+            height: 190px;
+            width: 210px;
+        }
+    }
+    
+    @media (min-width : 1000px) and (max-width : 1200px) {
+        
+        .tobi {
+            position: absolute;
+            top: 120px;
+            left: 310px;
+    
+            height: 190px;
+            width: 210px;
+        }
+    }
+    
+    @media (min-width : 800px) and (max-width : 1000px) {
+        
+        .tobi {
+            position: absolute;
+            top: 120px;
+            left: 245px;
+    
+            height: 180px;
+            width: 200px;
+        }
+    }
+    
+    @media (min-width : 700px) and (max-width : 800px) {
+        
+        .banner {
+            margin-bottom: 30px;
+        }
+        
+        .tobi {
+            position: absolute;
+            top: 130px;
+            left: 190px;
+    
+            height: 170px;
+            width: 190px;
+        }
+    }
+    
+    @media (min-width : 600px) and (max-width : 700px) {
+        
+        .banner {
+            margin-bottom: 30px;
+        }
+        
+        .tobi {
+            position: absolute;
+            top: 130px;
+            left: 155px;
+    
+            height: 170px;
+            width: 190px;
+        }
+    }
+    
+    @media (min-width : 500px) and (max-width : 600px) {
+    
+        .banner {
+            margin-bottom: 30px;
+        }
+    
+        .tobi {
+            position: absolute;
+            top: 140px;
+            left: 120px;
+    
+            height: 150px;
+            width: 170px;
+        }
+    }
+    
+    @media (min-width : 300px) and (max-width : 500px) {
+    
+        .banner {
+            margin-bottom: 30px;
+        }
+        
+        .tobi {
+            position: absolute;
+            top: 160px;
+            left: 120px;
+    
+            height: 130px;
+            width: 150px;
+        }
+    }
+    
+    @media (min-width : 200px) and (max-width : 300px) {
+    
+        .banner {
+            margin-bottom: 50px;
+        }
+        
+        .tobi {
+            position: absolute;
+            top: 160px;
+            left: 65px;
+    
+            height: 130px;
+            width: 150px;
+        }
+    }
+    
+    @media (min-width : 150px) and (max-width : 200px) {
+    
+        .banner {
+            margin-bottom: 50px;
+        }
+        
+        .tobi {
+            position: absolute;
+            top: 160px;
+            left: 45px;
+    
+            height: 130px;
+            width: 150px;
+        }
+    }

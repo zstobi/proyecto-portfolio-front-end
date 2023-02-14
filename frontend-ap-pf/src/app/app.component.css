@@ -1,0 +1,46 @@
+/* aca tengo que hacer los media querys */
+
+/* modifica la view entre estas resoluciones */
+@media (min-width : 500px) and (max-width : 1200px) {
+    
+    :host {
+        display: grid;
+        place-items: center;
+        gap: 22px;
+    }
+
+    .col{
+        width: 75vw;
+
+        border-radius: 12px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2),
+        -4px -4px 10px rgba(255, 255, 255, 0.8);
+    }
+
+    nav {
+        width: 75vw;
+    }
+}
+
+
+/* modifica la view entre estas resoluciones */
+@media (min-width : 1200px) {
+    
+    :host {
+        display: grid;
+        place-items: center;
+        gap: 22px;
+    }
+    
+    .col{
+        width: 55vw;
+
+        border-radius: 12px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2),
+        -4px -4px 10px rgba(255, 255, 255, 0.8);
+    }
+
+    nav {
+        width: 55vw;
+    }
+}
