@@ -2,6 +2,9 @@
     .banner {
         background-image: linear-gradient(to right, #434343 0%, black 100%); color: transparent;
         height: 230px;
+
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
     }
 
     /* profilepic */

@@ -1,0 +1,39 @@
+.form-banner {
+    background-image: linear-gradient(to right, #434343 0%, #000 100%);
+
+    width: 100%;
+    height: 80px;
+}
+
+.card {
+    display: grid;
+    place-items: center;
+}
+
+.card-shadow {
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2),
+    -4px -4px 10px rgba(255,255,255,0.8);
+}
+
+.card-body {
+    display: grid;
+    place-items: center;
+    gap: 10px;
+}
+
+@media (min-width : 500px) {
+    .card-body {
+        width: 400px;
+    }
+
+    .card-shadow {
+        border-radius: 12px;
+    }
+
+    .form-banner {
+        width: 500px;
+
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
+    }
+}
