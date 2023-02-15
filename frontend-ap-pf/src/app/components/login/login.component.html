@@ -1,19 +1,19 @@
 <div class="card card-shadow">
     <div class="form-banner"></div>
 
-    <div class="card-body">
+    <form class="card-body" #form="ngForm" (ngSubmit)="login(form)">
 
         <h5 class="card-title">Modo Edición</h5>
 
         <div class="input-field">
-            <input type="text" name="user" id="user" autocomplete="off" placeholder="ingresar usuario">
+            <input type="text" name="user" id="user" autocomplete="off" placeholder="ingresar usuario" [(ngModel)]="creds.user">
         </div>
 
         <div class="input-field">
-            <input type="password" name="password" id="password" autocomplete="off" placeholder="ingresar contraseña">
+            <input type="password" name="password" id="password" autocomplete="off" placeholder="ingresar contraseña" [(ngModel)]="creds.password">
         </div>
 
         <button type="submit" class="btn btn-dark">Ingresar</button>
 
-    </div>
+    </form>
 </div>

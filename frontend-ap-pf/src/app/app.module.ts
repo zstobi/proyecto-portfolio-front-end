@@ -14,6 +14,8 @@ import { IdiomsComponent } from './components/sections/idioms/idioms.component';
 import { FooterComponent } from './components/sections/footer/footer.component';
 import { HeaderComponent } from './components/sections/header/header.component';
 import { NavBarComponent } from './components/sections/nav-bar/nav-bar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { NavBarComponent } from './components/sections/nav-bar/nav-bar.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
