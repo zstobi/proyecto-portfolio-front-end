@@ -15,7 +15,9 @@ import { FooterComponent } from './components/sections/footer/footer.component';
 import { HeaderComponent } from './components/sections/header/header.component';
 import { NavBarComponent } from './components/sections/nav-bar/nav-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './helpers/auth.interceptor';
+import { EditionModeComponent } from './components/edition-mode/edition-mode.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     IdiomsComponent,
     FooterComponent,
     HeaderComponent,
-    NavBarComponent
+    NavBarComponent,
+    EditionModeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,11 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
