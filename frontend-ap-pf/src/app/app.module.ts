@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { EditionModeComponent } from './components/edition-mode/edition-mode.component';
+import { NavBarLogoutComponent } from './components/sections/nav-bar-logout/nav-bar-logout.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EditionModeComponent } from './components/edition-mode/edition-mode.com
     FooterComponent,
     HeaderComponent,
     NavBarComponent,
-    EditionModeComponent
+    EditionModeComponent,
+    NavBarLogoutComponent
   ],
   imports: [
     BrowserModule,

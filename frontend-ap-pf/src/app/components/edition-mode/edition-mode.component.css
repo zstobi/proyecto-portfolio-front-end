@@ -1,0 +1,5 @@
+/* habilita el gap en todas las resoluciones */
+:host {
+    display: grid;
+    gap: 22px;
+}

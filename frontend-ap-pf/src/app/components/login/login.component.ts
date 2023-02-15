@@ -25,7 +25,7 @@ export class LoginComponent {
 
     this.loginSvce.login(this.creds)
       .subscribe(response => {
-        this.router.navigate(['']);
+        this.router.navigate(['editionMode']);
       })
   }
 }
