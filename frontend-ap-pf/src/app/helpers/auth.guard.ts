@@ -18,8 +18,9 @@ export class AuthGuard implements CanActivate {
 
       if (this.loginSvce.getToken()) {
         return true;
+      } else {
+          this.router.navigate(['login']);
       }
-      this.router.navigate(['login']);
 
       return false;
   }

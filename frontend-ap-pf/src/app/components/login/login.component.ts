@@ -18,7 +18,9 @@ export class LoginComponent {
   constructor (
     private loginSvce: LoginFormService,
     private router: Router
-    ) {}
+    ) {
+      this.obligatedLogout();
+    }
 
   login(form: NgForm) {
     console.log('form value', form.value);
@@ -27,5 +29,11 @@ export class LoginComponent {
       .subscribe(response => {
         this.router.navigate(['editionMode']);
       })
+  }
+
+  obligatedLogout(){
+    if (this.router.url != '/editionMode'){
+      localStorage.removeItem('token');
+    }
   }
 }

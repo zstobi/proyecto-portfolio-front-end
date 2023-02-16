@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar-logout',
@@ -7,11 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar-logout.component.css']
 })
 export class NavBarLogoutComponent {
+  url: string = 'http://localhost:4200/editionMode';
   constructor (private router:Router) {}
+
+
 
   ngOnInit():void {}
 
   logout(){
     this.router.navigate(['']);
+    localStorage.removeItem('token');
   }
 }

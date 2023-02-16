@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edition-mode',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./edition-mode.component.css']
 })
 export class EditionModeComponent {
+  constructor (
+    private router: Router
+  ) {
+    console.log(this.router.url);
+  }
 
 }
