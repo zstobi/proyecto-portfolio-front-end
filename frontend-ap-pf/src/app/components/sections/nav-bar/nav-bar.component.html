@@ -25,7 +25,8 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <button type="button" class="btn btn-outline-dark" (click)="login()">Log In</button>
+              <button type="button" class="btn btn-outline-dark" (click)="login()" *ngIf="getToken() == null">Log In</button>
+              <button type="button" class="btn btn-danger" (click)="logout()" *ngIf="getToken() != null">Log Out</button>
             </li>
           </ul>
         </div>

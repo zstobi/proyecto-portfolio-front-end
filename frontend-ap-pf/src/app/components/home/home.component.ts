@@ -10,12 +10,12 @@ export class HomeComponent {
   constructor (
     private router: Router
     ) {
-      this.obligatedLogout();
+      // this.obligatedLogout();
     }
 
-  obligatedLogout(){
-    if (this.router.url != '/editionMode'){
-      localStorage.removeItem('token');
-    }
-  }
+  // obligatedLogout(){
+  //   if (this.router.url != '/editionMode'){
+  //     localStorage.removeItem('token');
+  //   }
+  // }
 }

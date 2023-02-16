@@ -7,7 +7,6 @@ import { Router, RouterLinkActive } from '@angular/router';
   styleUrls: ['./nav-bar-logout.component.css']
 })
 export class NavBarLogoutComponent {
-  url: string = 'http://localhost:4200/editionMode';
   constructor (private router:Router) {}
 
 

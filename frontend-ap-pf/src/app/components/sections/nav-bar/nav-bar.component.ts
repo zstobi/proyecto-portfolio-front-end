@@ -11,7 +11,16 @@ export class NavBarComponent implements OnInit{
 
   ngOnInit():void {}
 
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
   login(){
     this.router.navigate(['/login']);
+  }
+
+  logout(){
+    this.router.navigate(['']);
+    localStorage.removeItem('token');
   }
 }

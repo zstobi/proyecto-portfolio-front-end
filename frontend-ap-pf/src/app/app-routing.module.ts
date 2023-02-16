@@ -7,7 +7,7 @@ import { AuthGuard } from './helpers/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'editionMode', component: EditionModeComponent, canActivate: [AuthGuard]},
+  // {path: 'editionMode', component: EditionModeComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent}
 ];
 

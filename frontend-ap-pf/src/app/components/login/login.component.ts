@@ -19,21 +19,21 @@ export class LoginComponent {
     private loginSvce: LoginFormService,
     private router: Router
     ) {
-      this.obligatedLogout();
+      // this.obligatedLogout();
     }
 
   login(form: NgForm) {
-    console.log('form value', form.value);
+    // console.log('form value', form.value);
 
     this.loginSvce.login(this.creds)
       .subscribe(response => {
-        this.router.navigate(['editionMode']);
+        this.router.navigate(['']);
       })
   }
 
-  obligatedLogout(){
-    if (this.router.url != '/editionMode'){
-      localStorage.removeItem('token');
-    }
-  }
+  // obligatedLogout(){
+  //   if (this.router.url != '/editionMode'){
+  //     localStorage.removeItem('token');
+  //   }
+  // }
 }
