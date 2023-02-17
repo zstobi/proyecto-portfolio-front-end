@@ -1,57 +1,154 @@
 <div class="col">
     <div class="card">
         <div class="card-body">
-        <h5 class="card-title">Proyectos</h5>
-        </div>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <p class="h6">Randomizers</p>
-          <p> Diferentes secciones para seleccionar distintas cosas al azar.
-            <br>
-            Hecho con html, css y javascript.
-          </p>
-          <a href="https://github.com/zstobi/randomizers.git" target="_blank" class="card-link">Ir al repositorio.</a>
-        </li>
-        <li class="list-group-item">
-          <p class="h6">Conversor</p>
-          <p> Aplicacion de Conversion.
-            <br>
-            Hecho con html, css y javascript.
-          </p>
-          <a href="https://github.com/zstobi/conversor.git" target="_blank" class="card-link">Ir al repositorio.</a>
-        </li>
-        <li class="list-group-item">
-          <p class="h6">Aim Game</p>
-          <p> Un juego simple de aiming/puntería.
-            <br>
-            Hecho con html, css, nes.css y javascript.
-          </p>
-          <a href="https://github.com/zstobi/AimGame.git" target="_blank" class="card-link">Ir al repositorio.</a>
-        </li>
-        <li class="list-group-item">
-          <p class="h6">To Do</p>
-          <p> Aplicacion de organizacion de tareas por hacer.
-            <br>
-            <i style="color: #777777;"> - aun en desarrollo - </i>
-            <br>
-            Hecho con html, css, nes.css y javascript.
-          </p>
-          <a href="https://github.com/zstobi/To-Do.git" target="_blank" class="card-link">Ir al repositorio.</a>
-        </li>
-        <li class="list-group-item">
-          <p class="h6">Pixel Art</p>
-          <p> Aplicación de simulación para realizar dibujos basados en PixelArt.
-            <br>
-            <i style="color: #777777;"> - aun en desarrollo - </i>
-            <br>
-            Hecho con html, css y javascript.
-          </p>
-          <a href="https://github.com/zstobi/Pixel-Art.git" target="_blank" class="card-link">Ir al repositorio.</a>
-        </li>
-        <li class="list-group-item">
+          
+          <li class="list-group-item itemBtnsAdd">
+
+            <h5 class="card-title">Proyectos</h5>
+            
+            <button class="nonStyled" *ngIf="editMode()">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon add">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>              
+          
+          </li>
+
+          <li class="list-group-item itemBtns">
+            
+            <div class="texts">
+              <p class="h6">title</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, soluta. Aperiam iure, voluptatibus, quidem repudiandae deleniti unde quae exercitationem omnis qui magni, optio velit? Mollitia pariatur cumque dolores delectus illo!</p>
+              <a href="https://github.com/zstobi/randomizers.git" target="_blank" class="card-link">Ir al repositorio.</a>
+            </div>
+
+            <div class="btns" *ngIf="editMode()">
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg> 
+              </button>               
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+              </button>
+              
+            </div>
+
+          </li>
+
+          <li class="list-group-item itemBtns">
+            
+            <div class="texts">
+              <p class="h6">title</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, soluta. Aperiam iure, voluptatibus, quidem repudiandae deleniti unde quae exercitationem omnis qui magni, optio velit? Mollitia pariatur cumque dolores delectus illo!</p>
+              <a href="https://github.com/zstobi/randomizers.git" target="_blank" class="card-link">Ir al repositorio.</a>
+            </div>
+
+            <div class="btns" *ngIf="editMode()">
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg> 
+              </button>               
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+              </button>
+              
+            </div>
+
+          </li>
+
+          <li class="list-group-item itemBtns">
+            
+            <div class="texts">
+              <p class="h6">title</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, soluta. Aperiam iure, voluptatibus, quidem repudiandae deleniti unde quae exercitationem omnis qui magni, optio velit? Mollitia pariatur cumque dolores delectus illo!</p>
+              <a href="https://github.com/zstobi/randomizers.git" target="_blank" class="card-link">Ir al repositorio.</a>
+            </div>
+
+            <div class="btns" *ngIf="editMode()">
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg> 
+              </button>               
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+              </button>
+              
+            </div>
+
+          </li>
+
+          <li class="list-group-item itemBtns">
+            
+            <div class="texts">
+              <p class="h6">title</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, soluta. Aperiam iure, voluptatibus, quidem repudiandae deleniti unde quae exercitationem omnis qui magni, optio velit? Mollitia pariatur cumque dolores delectus illo!</p>
+              <a href="https://github.com/zstobi/randomizers.git" target="_blank" class="card-link">Ir al repositorio.</a>
+            </div>
+
+            <div class="btns" *ngIf="editMode()">
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg> 
+              </button>               
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+              </button>
+              
+            </div>
+
+          </li>
+
+          <li class="list-group-item itemBtns">
+            
+            <div class="texts">
+              <p class="h6">title</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, soluta. Aperiam iure, voluptatibus, quidem repudiandae deleniti unde quae exercitationem omnis qui magni, optio velit? Mollitia pariatur cumque dolores delectus illo!</p>
+              <a href="https://github.com/zstobi/randomizers.git" target="_blank" class="card-link">Ir al repositorio.</a>
+            </div>
+
+            <div class="btns" *ngIf="editMode()">
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg> 
+              </button>               
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+              </button>
+              
+            </div>
+
+          </li>
+
           
           <!-- CARRUSEL  -->
 
+      <li class="list-group-item">
       <div class="bd-example">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
