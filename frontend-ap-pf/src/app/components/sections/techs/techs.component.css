@@ -1,0 +1,43 @@
+/* items and buttons field */
+.itemBtns {
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.itemBtnsAdd {
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* buttons field */
+.btns {
+    display: inline-flex;
+    place-items: center;
+    gap: 20px;
+}
+
+/* progress bar width */
+.testWidth {
+    width: 80%;
+}    
+
+@media (max-width : 400px) {
+    .itemBtns {
+        display: grid;
+        place-content: center;
+        gap: 6px;
+    }
+
+    .btns {
+        display: inline-flex;
+        place-content: center;
+
+        padding-bottom: 10px;
+    }
+
+    .testWidth {
+        width: 60vw;
+    }
+}

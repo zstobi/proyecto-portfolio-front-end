@@ -30,4 +30,8 @@
 
         padding-bottom: 10px;
     }
+
+    .carrousel {
+        display: none;
+    }
 }
