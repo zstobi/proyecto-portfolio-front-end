@@ -19,7 +19,7 @@ export class LoginComponent {
     private loginSvce: LoginFormService,
     private router: Router
     ) {
-      // this.obligatedLogout();
+      this.obligatedLogout();
     }
 
   login(form: NgForm) {
@@ -31,9 +31,9 @@ export class LoginComponent {
       })
   }
 
-  // obligatedLogout(){
-  //   if (this.router.url != '/editionMode'){
-  //     localStorage.removeItem('token');
-  //   }
-  // }
+  obligatedLogout(){
+    if (this.router.url != ''){
+      localStorage.removeItem('token');
+    }
+  }
 }

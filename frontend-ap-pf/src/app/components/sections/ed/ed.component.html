@@ -1,39 +1,96 @@
 <div class="col">
     <div class="card">
-        <div class="card-body">
-        <h5 class="card-title">Educación</h5>
-        </div>
+      <div class="card-body">
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <p class="h6">Autodidacta</p>
-          <p>Me desarrollo como programador autodidacta desde mediados del 2021.
-            <br>
-            Me informo constantemente sobre el mundo IT.
-            <br>
-            Aprendo lenguajes de programación vía documentación, cursos, proyectos, etc.
-          </p>
-        </li>
-        <li class="list-group-item">
-          <p class="h6">Tecnicatura en Programación Informática</p>
-          <p>Actualmente estoy en el comienzo del segundo año de carrera.
-            <br>
-            Está planteada para una duración de 2 años y medio.
-            Se puede extender la carrera a 4 años para ser Licenciado en Informática.
-            <br>
-            Esta decisión la tomé por el hecho de querer saber más que solo programar.
-            <br>
-            De esta forma puedo aprender distintos temas que están alrededor de la programación en sí y son fundamentales para comprender el funcionamiento de la misma en su totalidad.
-          </p>
-        </li>
-        <li class="list-group-item">
-          <p class="h6">Argentina Programa</p>
-          <p>Comenzó con el 2022 y durante todo el año participó en mi formación de manera significativa.
-            <br>
-            Pasé la primera etapa. Certificado <a target="_blank" href="assets/certificado-etapa1.pdf"><u>acá</u></a>. 
-            <br>
-            Finalizando la segunda y última etapa. Este portafolio representa el proyecto final de la misma.
-          </p>
-        </li>
+
+          <li class="list-group-item itemBtnsAdd">
+          
+            <h5 class="card-title">Educación</h5>
+
+            <button class="nonStyled" *ngIf="editMode()">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon add">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>
+
+          </li>
+
+          <li class="list-group-item itemBtns">
+            
+            <div class="texts">
+              <p class="h6">title</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, soluta. Aperiam iure, voluptatibus, quidem repudiandae deleniti unde quae exercitationem omnis qui magni, optio velit? Mollitia pariatur cumque dolores delectus illo!</p>
+            </div>
+
+            <div class="btns" *ngIf="editMode()">
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg> 
+              </button>               
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+              </button>
+              
+            </div>
+
+          </li>
+
+          <li class="list-group-item itemBtns">
+            
+            <div class="texts">
+              <p class="h6">title</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, soluta. Aperiam iure, voluptatibus, quidem repudiandae deleniti unde quae exercitationem omnis qui magni, optio velit? Mollitia pariatur cumque dolores delectus illo!</p>
+            </div>
+
+            <div class="btns" *ngIf="editMode()">
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg> 
+              </button>               
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+              </button>
+              
+            </div>
+
+          </li>
+
+          <li class="list-group-item itemBtns">
+            
+            <div class="texts">
+              <p class="h6">title</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, soluta. Aperiam iure, voluptatibus, quidem repudiandae deleniti unde quae exercitationem omnis qui magni, optio velit? Mollitia pariatur cumque dolores delectus illo!</p>
+            </div>
+
+            <div class="btns" *ngIf="editMode()">
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg> 
+              </button>               
+
+              <button class="nonStyled">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+              </button>
+              
+            </div>
+
+          </li>
+
         </ul>
+      </div>
     </div>
 </div>

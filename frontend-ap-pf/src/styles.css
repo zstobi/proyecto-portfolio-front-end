@@ -73,3 +73,34 @@ a:hover {
         width: 55vw;
     }
 }
+
+/* styles for editionMode */
+
+.nonStyled {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+}
+
+/* icon design */
+.icon {
+    width: 23px;
+    height: 23px;
+}
+
+/* add design */
+.add {
+    color: #000;
+}
+
+/* delete design */
+.delete {
+    color: #ff0000;
+}
+
+/* edit design */
+.edit {
+    color: #6c757d;
+    height: 21.5px;
+}

@@ -1,9 +1,3 @@
-/* text no margin */
-p {
-    margin: 0;
-    text-justify: auto;
-}
-
 /* items and buttons field */
 .itemBtns {
     display: inline-flex;
@@ -24,39 +18,10 @@ p {
     gap: 20px;
 }
 
-.nonStyled {
-    border: none;
-    margin: 0;
-    padding: 0;
-    background-color: inherit;
-}
-
-/* icon design */
-.icon {
-    width: 23px;
-    height: 23px;
-}
-
-/* add design */
-.add {
-    color: #000;
-}
-
-/* delete design */
-.delete {
-    color: #ff0000;
-}
-
-/* edit design */
-.edit {
-    color: #6c757d;
-    height: 21.5px;
-}
-
 @media (max-width : 400px) {
     .itemBtns {
         display: grid;
-        gap: 30px;
+        gap: 20px;
     }
 
     .btns {
