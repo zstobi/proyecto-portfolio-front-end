@@ -19,6 +19,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { EditionModeComponent } from './components/edition-mode/edition-mode.component';
 import { NavBarLogoutComponent } from './components/sections/nav-bar-logout/nav-bar-logout.component';
+import { NewEducationComponent } from './components/sections/ed/new-education/new-education.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NavBarLogoutComponent } from './components/sections/nav-bar-logout/nav-
     HeaderComponent,
     NavBarComponent,
     EditionModeComponent,
-    NavBarLogoutComponent
+    NavBarLogoutComponent,
+    NewEducationComponent
   ],
   imports: [
     BrowserModule,
