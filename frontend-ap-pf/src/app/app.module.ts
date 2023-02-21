@@ -20,6 +20,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { EditionModeComponent } from './components/edition-mode/edition-mode.component';
 import { NavBarLogoutComponent } from './components/sections/nav-bar-logout/nav-bar-logout.component';
 import { NewEducationComponent } from './components/sections/ed/new-education/new-education.component';
+import { EditEducationComponent } from './components/sections/ed/edit-education/edit-education.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NewEducationComponent } from './components/sections/ed/new-education/ne
     NavBarComponent,
     EditionModeComponent,
     NavBarLogoutComponent,
-    NewEducationComponent
+    NewEducationComponent,
+    EditEducationComponent
   ],
   imports: [
     BrowserModule,

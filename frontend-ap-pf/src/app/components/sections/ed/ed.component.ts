@@ -34,4 +34,17 @@ export class EdComponent {
     this.edSvce.list().subscribe(data => {this.ed = data});
   }
 
+  deleteEd(id?:number){
+    if (id!=undefined){
+      this.edSvce.deleteEd(id).subscribe({
+        next: (data) => {
+          this.getEducation();
+        },
+        error: (err) => {
+        alert('failed');
+        this.router.navigate(['']);
+        }
+        });
+    }
+  }
 }

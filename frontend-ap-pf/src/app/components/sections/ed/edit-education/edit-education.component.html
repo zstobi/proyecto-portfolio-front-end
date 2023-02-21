@@ -1,0 +1,19 @@
+<div class="card card-shadow">
+    <div class="form-banner"></div>
+
+    <form class="card-body" #form="ngForm" (ngSubmit)="updateEd()" novalidate>
+
+        <h5 class="card-title">Nueva Educación</h5>
+
+        <div class="input-field">
+            <input type="text" name="edTitle" id="edTitle" autocomplete="off" placeholder="ingresar título" [(ngModel)]="ed.edTitle" required>
+        </div>
+
+        <div class="input-field">
+            <textarea class="content-field" type="text" name="edContent" id="edContent" autocomplete="off" placeholder="ingresar contenido" [(ngModel)]="ed.edContent" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Actualizar</button>
+
+    </form>
+</div>
