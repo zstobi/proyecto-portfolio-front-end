@@ -21,6 +21,8 @@ import { EditionModeComponent } from './components/edition-mode/edition-mode.com
 import { NavBarLogoutComponent } from './components/sections/nav-bar-logout/nav-bar-logout.component';
 import { NewEducationComponent } from './components/sections/ed/new-education/new-education.component';
 import { EditEducationComponent } from './components/sections/ed/edit-education/edit-education.component';
+import { NewAboutMeComponent } from './components/sections/abtm/new-about-me/new-about-me.component';
+import { EditAboutMeComponent } from './components/sections/abtm/edit-about-me/edit-about-me.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { EditEducationComponent } from './components/sections/ed/edit-education/
     EditionModeComponent,
     NavBarLogoutComponent,
     NewEducationComponent,
-    EditEducationComponent
+    EditEducationComponent,
+    NewAboutMeComponent,
+    EditAboutMeComponent
   ],
   imports: [
     BrowserModule,

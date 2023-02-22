@@ -1,0 +1,15 @@
+<div class="card card-shadow">
+    <div class="form-banner"></div>
+
+    <form class="card-body" #form="ngForm" (ngSubmit)="addAboutMe()" novalidate>
+
+        <h5 class="card-title">Nueva Acerca de Mi</h5>
+
+        <div class="input-field">
+            <textarea class="content-field" type="text" name="abtmContent" id="abtmContent" autocomplete="off" placeholder="ingresar contenido" [(ngModel)]="abtmContent" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Agregar</button>
+
+    </form>
+</div>

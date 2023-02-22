@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AboutMe } from 'src/app/models/aboutme';
+import { AboutmeService } from 'src/app/services/aboutme.service';
 
 @Component({
   selector: 'app-abtm',
@@ -7,11 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./abtm.component.css']
 })
 export class AbtmComponent {
+  abtm: AboutMe[]=[];
+
   constructor(
-    private router: Router
+    private router: Router,
+    private abtmSvce: AboutmeService
   ) {}
 
   ngOnInit(){
+    this.getAboutMe();
     this.editMode();
   }
 
@@ -20,6 +26,24 @@ export class AbtmComponent {
       return false;
     } else {
       return true;
+    }
+  }
+
+  getAboutMe():void{
+    this.abtmSvce.list().subscribe(data => {this.abtm = data})
+  }
+
+  deleteAbtm(id?:number){
+    if (id != undefined){
+      this.abtmSvce.deleteAbtm(id).subscribe({
+        next: (data) => {
+          this.getAboutMe();
+          alert('succesfully deleted');
+        },
+        error: (err) => {
+        alert('it failed');
+        }
+        });
     }
   }
 }
