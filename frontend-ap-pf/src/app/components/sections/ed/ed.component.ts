@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Education } from 'src/app/models/education';
 import { EducationService } from 'src/app/services/education.service';
 
@@ -8,13 +9,12 @@ import { EducationService } from 'src/app/services/education.service';
   templateUrl: './ed.component.html',
   styleUrls: ['./ed.component.css']
 })
-export class EdComponent {
+export class EdComponent implements OnInit {
   ed:Education[] = [];
 
   constructor(
     private router: Router,
     private edSvce: EducationService
-    // aca agregaria el servicio del token pero vamos viendo como progresa
   ) {}
 
   ngOnInit(){
@@ -31,18 +31,18 @@ export class EdComponent {
   }
 
   getEducation():void{
-    this.edSvce.list().subscribe(data => {this.ed = data});
+    this.edSvce.list().subscribe(data => {this.ed = data})
   }
 
   deleteEd(id?:number){
-    if (id!=undefined){
+    if (id != undefined){
       this.edSvce.deleteEd(id).subscribe({
         next: (data) => {
           this.getEducation();
+          alert('succesfully deleted');
         },
         error: (err) => {
-        alert('failed');
-        this.router.navigate(['']);
+        alert('it failed');
         }
         });
     }

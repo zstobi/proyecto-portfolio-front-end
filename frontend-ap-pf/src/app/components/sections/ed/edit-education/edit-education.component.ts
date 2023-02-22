@@ -9,7 +9,7 @@ import { EducationService } from 'src/app/services/education.service';
   styleUrls: ['./edit-education.component.css']
 })
 export class EditEducationComponent implements OnInit {
-  ed: Education = null;
+  ed: Education = new Education('','');
   
   constructor(
     private edSvce: EducationService,
