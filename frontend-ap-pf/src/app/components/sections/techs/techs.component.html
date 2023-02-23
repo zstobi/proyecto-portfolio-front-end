@@ -28,7 +28,7 @@
               <p class="h6">{{Techs.tsTitle}}</p>
 
               <div class="progress mb-3">
-                <div class="progress-bar bg-dark text-white" role="progressbar" style=`width: {{Techs.percentage}}%;`>{{Techs.percentage}}%</div>
+                <div class="progress-bar bg-dark text-white" role="progressbar" [style.width]="(Techs.percentage)+'%'">{{Techs.percentage}}%</div>
               </div>
 
             </div>
@@ -51,13 +51,7 @@
 
           </li>
 
-        <li class="list-group-item">
-          <small>Nótese que los porcentajes es simplemente por el atractivo visual.</small>
-          <br>
-          <small>Es importante resaltar que cada persona puede juzgar de manera distinta los conocimientos.</small>
-          <br>
-          <small>Algo que es 50% para mí, puede significar un 20% para otra persona.</small>
-        </li>
+        
         </ul>
     </div>
 </div>

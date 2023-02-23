@@ -17,7 +17,7 @@
 
             <li class="list-group-item itemBtns"  *ngFor="let AboutMe of abtm">
               
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, soluta. Aperiam iure, voluptatibus, quidem repudiandae deleniti unde quae exercitationem omnis qui magni, optio velit? Mollitia pariatur cumque dolores delectus illo!</p>
+              <p>{{AboutMe.abtmContent}}</p>
               <div class="btns" *ngIf="editMode()">
 
                 <button class="nonStyled">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Techs } from 'src/app/models/techs';
 import { TechsService } from 'src/app/services/techs.service';
@@ -8,7 +8,7 @@ import { TechsService } from 'src/app/services/techs.service';
   templateUrl: './techs.component.html',
   styleUrls: ['./techs.component.css']
 })
-export class TechsComponent {
+export class TechsComponent implements OnInit {
   
   ts:Techs[] = [];
 
@@ -16,6 +16,11 @@ export class TechsComponent {
     private router: Router,
     private tsSvce: TechsService
   ) {}
+
+  ngOnInit(){
+    this.getTechs();
+    this.editMode();
+  }
 
   getTechs():void{
     this.tsSvce.list().subscribe(data => {this.ts = data})
