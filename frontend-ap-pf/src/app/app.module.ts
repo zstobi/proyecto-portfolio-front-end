@@ -25,6 +25,8 @@ import { NewAboutMeComponent } from './components/sections/abtm/new-about-me/new
 import { EditAboutMeComponent } from './components/sections/abtm/edit-about-me/edit-about-me.component';
 import { NewProjectComponent } from './components/sections/prjs/new-project/new-project.component';
 import { EditProjectComponent } from './components/sections/prjs/edit-project/edit-project.component';
+import { NewSoftSkillComponent } from './components/sections/ss/new-soft-skill/new-soft-skill.component';
+import { EditSoftSkillComponent } from './components/sections/ss/edit-soft-skill/edit-soft-skill.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { EditProjectComponent } from './components/sections/prjs/edit-project/ed
     NewAboutMeComponent,
     EditAboutMeComponent,
     NewProjectComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    NewSoftSkillComponent,
+    EditSoftSkillComponent
   ],
   imports: [
     BrowserModule,

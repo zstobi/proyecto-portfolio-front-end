@@ -1,0 +1,15 @@
+<div class="card card-shadow">
+    <div class="form-banner"></div>
+
+    <form class="card-body" #form="ngForm" (ngSubmit)="addSS()" novalidate>
+
+        <h5 class="card-title">Nueva SoftSkill</h5>
+
+        <div class="input-field">
+            <input type="text" name="ssTitle" id="ssTitle" autocomplete="off" placeholder="ingresar título" [(ngModel)]="ssTitle" required>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Agregar</button>
+
+    </form>
+</div>

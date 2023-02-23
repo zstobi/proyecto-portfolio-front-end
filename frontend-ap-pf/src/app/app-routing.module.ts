@@ -8,6 +8,8 @@ import { EditEducationComponent } from './components/sections/ed/edit-education/
 import { NewEducationComponent } from './components/sections/ed/new-education/new-education.component';
 import { EditProjectComponent } from './components/sections/prjs/edit-project/edit-project.component';
 import { NewProjectComponent } from './components/sections/prjs/new-project/new-project.component';
+import { EditSoftSkillComponent } from './components/sections/ss/edit-soft-skill/edit-soft-skill.component';
+import { NewSoftSkillComponent } from './components/sections/ss/new-soft-skill/new-soft-skill.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,8 +22,8 @@ const routes: Routes = [
   {path: 'ed/update/:id', component: EditEducationComponent},
   // {path: 'techs/add', component: NewTechsComponent},
   // {path: 'techs/update/:id', component: EditTechsComponent},
-  // {path: 'ss/add', component: NewEducationComponent},
-  // {path: 'ss/update/:id', component: EditEducationComponent}
+  {path: 'ss/add', component: NewSoftSkillComponent},
+  {path: 'ss/update/:id', component: EditSoftSkillComponent}
 ];
 
 @NgModule({
