@@ -1,0 +1,23 @@
+<div class="card card-shadow">
+    <div class="form-banner"></div>
+
+    <form class="card-body" #form="ngForm" (ngSubmit)="updatePrjs()" novalidate>
+
+        <h5 class="card-title">Editar Proyecto</h5>
+
+        <div class="input-field">
+            <input type="text" name="prjsTitle" id="prjsTitle" autocomplete="off" placeholder="ingresar título" [(ngModel)]="prjs.prjsTitle" required>
+        </div>
+
+        <div class="input-field">
+            <textarea class="content-field" type="text" name="prjsContent" id="prjsContent" autocomplete="off" placeholder="ingresar contenido" [(ngModel)]="prjs.prjsContent" required></textarea>
+        </div>
+
+        <div class="input-field">
+            <input type="text" name="link" id="link" autocomplete="off" placeholder="link al repositorio" [(ngModel)]="prjs.link">
+        </div>
+
+        <button type="submit" class="btn btn-dark">Actualizar</button>
+
+    </form>
+</div>

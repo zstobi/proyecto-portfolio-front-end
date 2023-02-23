@@ -23,6 +23,8 @@ import { NewEducationComponent } from './components/sections/ed/new-education/ne
 import { EditEducationComponent } from './components/sections/ed/edit-education/edit-education.component';
 import { NewAboutMeComponent } from './components/sections/abtm/new-about-me/new-about-me.component';
 import { EditAboutMeComponent } from './components/sections/abtm/edit-about-me/edit-about-me.component';
+import { NewProjectComponent } from './components/sections/prjs/new-project/new-project.component';
+import { EditProjectComponent } from './components/sections/prjs/edit-project/edit-project.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { EditAboutMeComponent } from './components/sections/abtm/edit-about-me/e
     NewEducationComponent,
     EditEducationComponent,
     NewAboutMeComponent,
-    EditAboutMeComponent
+    EditAboutMeComponent,
+    NewProjectComponent,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,
