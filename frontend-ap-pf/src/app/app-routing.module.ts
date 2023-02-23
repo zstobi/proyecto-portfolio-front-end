@@ -10,6 +10,8 @@ import { EditProjectComponent } from './components/sections/prjs/edit-project/ed
 import { NewProjectComponent } from './components/sections/prjs/new-project/new-project.component';
 import { EditSoftSkillComponent } from './components/sections/ss/edit-soft-skill/edit-soft-skill.component';
 import { NewSoftSkillComponent } from './components/sections/ss/new-soft-skill/new-soft-skill.component';
+import { EditTechComponent } from './components/sections/techs/edit-tech/edit-tech.component';
+import { NewTechComponent } from './components/sections/techs/new-tech/new-tech.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,8 +22,8 @@ const routes: Routes = [
   {path: 'prjs/update/:id', component: EditProjectComponent},
   {path: 'ed/add', component: NewEducationComponent},
   {path: 'ed/update/:id', component: EditEducationComponent},
-  // {path: 'techs/add', component: NewTechsComponent},
-  // {path: 'techs/update/:id', component: EditTechsComponent},
+  {path: 'techs/add', component: NewTechComponent},
+  {path: 'techs/update/:id', component: EditTechComponent},
   {path: 'ss/add', component: NewSoftSkillComponent},
   {path: 'ss/update/:id', component: EditSoftSkillComponent}
 ];

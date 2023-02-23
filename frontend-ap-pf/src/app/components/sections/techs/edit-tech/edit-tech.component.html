@@ -1,0 +1,19 @@
+<div class="card card-shadow">
+    <div class="form-banner"></div>
+
+    <form class="card-body" #form="ngForm" (ngSubmit)="updateTech()" novalidate>
+
+        <h5 class="card-title">Editar Tecnología</h5>
+
+        <div class="input-field">
+            <input type="text" name="tsTitle" id="tsTitle" autocomplete="off" placeholder="ingresar título" [(ngModel)]="ts.tsTitle" required>
+        </div>
+
+        <div class="input-field">
+            <input type="number" name="percentage" id="percentage" autocomplete="off" placeholder="ingresar porcentaje" [(ngModel)]="ts.percentage" min="0" max="100" required>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Actualizar</button>
+
+    </form>
+</div>

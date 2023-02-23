@@ -14,7 +14,7 @@
             </p>
             </div>
             
-            <button class="nonStyled" *ngIf="editMode()">
+            <button class="nonStyled" *ngIf="editMode()" routerLink="/techs/add">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon add">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -22,13 +22,13 @@
           
           </li>
 
-          <li class="list-group-item itemBtns">
+          <li class="list-group-item itemBtns" *ngFor="let Techs of ts">
             
             <div class="texts testWidth">
-              <p class="h6">HTML</p>
+              <p class="h6">{{Techs.tsTitle}}</p>
 
               <div class="progress mb-3">
-                <div class="progress-bar bg-dark text-white" role="progressbar" style="width: 75%;">75%</div>
+                <div class="progress-bar bg-dark text-white" role="progressbar" style=`width: {{Techs.percentage}}%;`>{{Techs.percentage}}%</div>
               </div>
 
             </div>
@@ -36,186 +36,12 @@
             <div class="btns" *ngIf="editMode()">
 
               <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete" (click)="deleteTech(Techs.id)">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg> 
               </button>               
 
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                </svg>
-              </button>
-              
-            </div>
-
-          </li>
-
-          <li class="list-group-item itemBtns">
-            
-            <div class="texts testWidth">
-              <p class="h6">CSS</p>
-
-              <div class="progress mb-3">
-                <div class="progress-bar bg-dark text-white" role="progressbar" style="width: 75%;">75%</div>
-              </div>
-
-            </div>
-
-            <div class="btns" *ngIf="editMode()">
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg> 
-              </button>               
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                </svg>
-              </button>
-              
-            </div>
-
-          </li>
-
-          <li class="list-group-item itemBtns">
-            
-            <div class="texts testWidth">
-              <p class="h6">JAVASCRIPT</p>
-
-              <div class="progress mb-3">
-                <div class="progress-bar bg-dark text-white" role="progressbar" style="width: 60%;">60%</div>
-              </div>
-
-            </div>
-
-            <div class="btns" *ngIf="editMode()">
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg> 
-              </button>               
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                </svg>
-              </button>
-              
-            </div>
-
-          </li>
-
-          <li class="list-group-item itemBtns">
-            
-            <div class="texts testWidth">
-              <p class="h6">ANGULAR</p>
-
-              <div class="progress mb-3">
-                <div class="progress-bar bg-dark text-white" role="progressbar" style="width: 35%;">35%</div>
-              </div>
-
-            </div>
-
-            <div class="btns" *ngIf="editMode()">
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg> 
-              </button>               
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                </svg>
-              </button>
-              
-            </div>
-
-          </li>
-
-          <li class="list-group-item itemBtns">
-            
-            <div class="texts testWidth">
-              <p class="h6">BOOTSTRAP</p>
-
-              <div class="progress mb-3">
-                <div class="progress-bar bg-dark text-white" role="progressbar" style="width: 75%;">75%</div>
-              </div>
-
-            </div>
-
-            <div class="btns" *ngIf="editMode()">
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg> 
-              </button>               
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                </svg>
-              </button>
-              
-            </div>
-
-          </li>
-
-          <li class="list-group-item itemBtns">
-            
-            <div class="texts testWidth">
-              <p class="h6">SPRINGBOOT</p>
-
-              <div class="progress mb-3">
-                <div class="progress-bar bg-dark text-white" role="progressbar" style="width: 35%;">35%</div>
-              </div>
-
-            </div>
-
-            <div class="btns" *ngIf="editMode()">
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg> 
-              </button>               
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                </svg>
-              </button>
-              
-            </div>
-
-          </li>
-
-          <li class="list-group-item itemBtns">
-            
-            <div class="texts testWidth">
-              <p class="h6">MYSQL</p>
-
-              <div class="progress mb-3">
-                <div class="progress-bar bg-dark text-white w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-              </div>
-
-            </div>
-
-            <div class="btns" *ngIf="editMode()">
-
-              <button class="nonStyled">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon delete">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg> 
-              </button>               
-
-              <button class="nonStyled">
+              <button class="nonStyled" routerLink="techs/update/{{Techs.id}}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon edit">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                 </svg>
