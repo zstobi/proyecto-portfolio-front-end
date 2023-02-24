@@ -10,12 +10,13 @@ export class HomeComponent {
   constructor (
     private router: Router
     ) {
-      // this.obligatedLogout();
+      this.obligatedLogout();
     }
 
-  // obligatedLogout(){
-  //   if (this.router.url != '/editionMode'){
-  //     localStorage.removeItem('token');
-  //   }
-  // }
+  // this solution also logout in refreshing
+  obligatedLogout(){
+    addEventListener('beforeunload',()=>{
+      localStorage.removeItem('token');
+    })
+  }
 }
