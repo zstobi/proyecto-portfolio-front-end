@@ -104,3 +104,8 @@ a:hover {
     color: #6c757d;
     height: 21.5px;
 }
+
+.noLongWord {
+    word-break: break-all;
+    /* word-wrap: break-word; */
+}

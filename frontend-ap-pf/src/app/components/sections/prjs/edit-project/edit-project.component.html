@@ -17,7 +17,11 @@
             <input type="text" name="link" id="link" autocomplete="off" placeholder="link al repositorio" [(ngModel)]="prjs.link">
         </div>
 
-        <button type="submit" class="btn btn-dark">Actualizar</button>
+        <div class="btns-field">
+            <button type="button" class="btn btn-secondary closeBtn" routerLink="">Cancelar</button>
+
+            <button type="submit" class="btn btn-dark">Actualizar</button>
+        </div>
 
     </form>
 </div>

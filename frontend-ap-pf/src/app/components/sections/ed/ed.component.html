@@ -18,8 +18,8 @@
           <li class="list-group-item itemBtns" *ngFor="let Education of ed">
             
             <div class="texts">
-              <p class="h6">{{Education.edTitle}}</p>
-              <p>{{Education.edContent}}</p>
+              <p class="h6 noLongWord">{{Education.edTitle}}</p>
+              <p class="noLongWord">{{Education.edContent}}</p>
             </div>
 
             <div class="btns" *ngIf="editMode()">

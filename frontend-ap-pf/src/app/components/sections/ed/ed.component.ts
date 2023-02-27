@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Education } from 'src/app/models/education';
+import { DeleteToastService } from 'src/app/services/delete-toast.service';
 import { EducationService } from 'src/app/services/education.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class EdComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private edSvce: EducationService
+    private edSvce: EducationService,
+    private delToastSvce: DeleteToastService
   ) {}
 
   ngOnInit(){
@@ -38,7 +40,7 @@ export class EdComponent implements OnInit {
       this.edSvce.deleteEd(id).subscribe({
         next: (data) => {
           this.getEducation();
-          alert('succesfully deleted');
+          this.delToastSvce.deleteToast();
         },
         error: (err) => {
         alert('it failed');

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SoftSkills } from 'src/app/models/softskills';
+import { DeleteToastService } from 'src/app/services/delete-toast.service';
 import { SoftskillsService } from 'src/app/services/softskills.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class SsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private ssSvce: SoftskillsService
+    private ssSvce: SoftskillsService,
+    private delToastSvce: DeleteToastService
   ) {}
 
   ngOnInit(){
@@ -38,7 +40,7 @@ export class SsComponent implements OnInit {
       this.ssSvce.deleteSS(id).subscribe({
         next: (data) => {
           this.getSS();
-          alert('succesfully deleted');
+          this.delToastSvce.deleteToast();
         },
         error: (err) => {
         alert('it failed');

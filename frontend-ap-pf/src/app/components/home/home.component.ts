@@ -10,7 +10,7 @@ export class HomeComponent {
   constructor (
     private router: Router
     ) {
-      this.obligatedLogout();
+      // this.obligatedLogout();
     }
 
   // this solution also logout in refreshing

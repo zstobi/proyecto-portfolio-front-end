@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AboutMe } from 'src/app/models/aboutme';
 import { AboutmeService } from 'src/app/services/aboutme.service';
+import { MatDialog } from  '@angular/material/dialog';
+import { DeleteToastService } from 'src/app/services/delete-toast.service';
 
 @Component({
   selector: 'app-abtm',
@@ -10,10 +12,13 @@ import { AboutmeService } from 'src/app/services/aboutme.service';
 })
 export class AbtmComponent {
   abtm: AboutMe[]=[];
+  liveToast:HTMLDivElement;
 
   constructor(
     private router: Router,
-    private abtmSvce: AboutmeService
+    private abtmSvce: AboutmeService,
+    private delToastSvce: DeleteToastService,
+    private dialogRef: MatDialog
   ) {}
 
   ngOnInit(){
@@ -38,7 +43,7 @@ export class AbtmComponent {
       this.abtmSvce.deleteAbtm(id).subscribe({
         next: (data) => {
           this.getAboutMe();
-          alert('succesfully deleted');
+          this.delToastSvce.deleteToast();
         },
         error: (err) => {
         alert('it failed');

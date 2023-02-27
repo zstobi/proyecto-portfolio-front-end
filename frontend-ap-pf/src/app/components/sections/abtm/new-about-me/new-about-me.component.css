@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+/* .blur {
+    filter: blur(3px);
+} */
+
 .card-shadow {
     box-shadow: 4px 4px 10px rgba(0,0,0,0.2),
     -4px -4px 10px rgba(255,255,255,0.8);
@@ -70,4 +74,9 @@ input:focus, textarea:focus {
         border-top-right-radius: 12px;
         border-top-left-radius: 12px;
     }
+}
+
+.btns-field {
+    display: flex;
+    gap: 5px;
 }

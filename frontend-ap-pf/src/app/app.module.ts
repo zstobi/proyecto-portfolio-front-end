@@ -29,6 +29,9 @@ import { NewSoftSkillComponent } from './components/sections/ss/new-soft-skill/n
 import { EditSoftSkillComponent } from './components/sections/ss/edit-soft-skill/edit-soft-skill.component';
 import { NewTechComponent } from './components/sections/techs/new-tech/new-tech.component';
 import { EditTechComponent } from './components/sections/techs/edit-tech/edit-tech.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteToastService } from './services/delete-toast.service';
 
 @NgModule({
   declarations: [
@@ -59,10 +62,12 @@ import { EditTechComponent } from './components/sections/techs/edit-tech/edit-te
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [
     {

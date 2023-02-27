@@ -25,7 +25,7 @@
           <li class="list-group-item itemBtns" *ngFor="let Techs of ts">
             
             <div class="texts testWidth">
-              <p class="h6">{{Techs.tsTitle}}</p>
+              <p class="h6 noLongWord">{{Techs.tsTitle}}</p>
 
               <div class="progress mb-3">
                 <div class="progress-bar bg-dark text-white" role="progressbar" [style.width]="(Techs.percentage)+'%'">{{Techs.percentage}}%</div>

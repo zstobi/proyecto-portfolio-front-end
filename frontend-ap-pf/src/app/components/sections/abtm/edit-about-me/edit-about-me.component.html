@@ -9,7 +9,11 @@
             <textarea class="content-field" type="text" name="abtmContent" id="abtmContent" autocomplete="off" placeholder="ingresar contenido" [(ngModel)]="abtm.abtmContent" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-dark">Actualizar</button>
+        <div class="btns-field">
+            <button type="button" class="btn btn-secondary closeBtn" routerLink="">Cancelar</button>
+
+            <button type="submit" class="btn btn-dark">Actualizar</button>
+        </div>
 
     </form>
 </div>

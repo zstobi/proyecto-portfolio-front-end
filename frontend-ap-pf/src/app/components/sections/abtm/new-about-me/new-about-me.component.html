@@ -3,13 +3,17 @@
 
     <form class="card-body" #form="ngForm" (ngSubmit)="addAboutMe()" novalidate>
 
-        <h5 class="card-title">Nueva Acerca de Mi</h5>
+        <h5 class="card-title">Nuevo Acerca de Mi</h5>
 
         <div class="input-field">
             <textarea class="content-field" type="text" name="abtmContent" id="abtmContent" autocomplete="off" placeholder="ingresar contenido" [(ngModel)]="abtmContent" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-dark">Agregar</button>
+        <div class="btns-field">
+            <button type="button" class="btn btn-secondary closeBtn" routerLink="">Cancelar</button>
+
+            <button type="submit" class="btn btn-dark">Agregar</button>
+        </div>
 
     </form>
 </div>

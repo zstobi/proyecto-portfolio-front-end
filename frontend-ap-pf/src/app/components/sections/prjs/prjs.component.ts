@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Projects } from 'src/app/models/projects';
+import { DeleteToastService } from 'src/app/services/delete-toast.service';
 import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class PrjsComponent {
 
   constructor(
     private router: Router,
-    private prjsSvce: ProjectsService
+    private prjsSvce: ProjectsService,
+    private delToastSvce: DeleteToastService
   ) {}
 
   ngOnInit(){
@@ -38,7 +40,7 @@ export class PrjsComponent {
       this.prjsSvce.deletePrjs(id).subscribe({
         next: (data) => {
           this.getProjects();
-          alert('succesfully deleted');
+          this.delToastSvce.deleteToast();
         },
         error: (err) => {
         alert('it failed');

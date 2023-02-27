@@ -13,7 +13,11 @@
             <input type="number" name="percentage" id="percentage" autocomplete="off" placeholder="ingresar porcentaje" [(ngModel)]="percentage" min="0" max="100" required>
         </div>
 
-        <button type="submit" class="btn btn-dark">Agregar</button>
+        <div class="btns-field">
+            <button type="button" class="btn btn-secondary closeBtn" routerLink="">Cancelar</button>
+
+            <button type="submit" class="btn btn-dark">Agregar</button>
+        </div>
 
     </form>
 </div>
