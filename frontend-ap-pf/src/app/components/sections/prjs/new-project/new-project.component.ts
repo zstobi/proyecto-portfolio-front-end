@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Projects } from 'src/app/models/projects';
+import { AddToastService } from 'src/app/services/add-toast.service';
 import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class NewProjectComponent {
   
   constructor(
     private prjsSvce: ProjectsService,
-    private router:Router
+    private router:Router,
+    private addToastSvce: AddToastService
   ){}
 
   ngOnInit():void {
@@ -26,8 +28,10 @@ export class NewProjectComponent {
     const prjs = new Projects(this.prjsTitle, this.prjsContent, this.link);
     this.prjsSvce.savePrjs(prjs).subscribe(
       data=>{
-        alert("prj succesfully added");
-        this.router.navigate(['']);
+        this.addToastSvce.addToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },1500)
       }, err=>{
         alert("failed");
         this.router.navigate(['']);

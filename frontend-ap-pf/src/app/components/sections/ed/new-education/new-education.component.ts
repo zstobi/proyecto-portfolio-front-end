@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Education } from 'src/app/models/education';
+import { AddToastService } from 'src/app/services/add-toast.service';
 import { EducationService } from 'src/app/services/education.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class NewEducationComponent implements OnInit {
   
   constructor(
     private edSvce: EducationService,
-    private router:Router
+    private router:Router,
+    private addToastSvce: AddToastService
   ){}
 
   ngOnInit():void {
@@ -25,8 +27,10 @@ export class NewEducationComponent implements OnInit {
     const ed = new Education(this.edTitle, this.edContent);
     this.edSvce.saveEd(ed).subscribe(
       data=>{
-        alert("ed succesfully added");
-        this.router.navigate(['']);
+        this.addToastSvce.addToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },1500)
       }, err=>{
         alert("failed");
         this.router.navigate(['']);

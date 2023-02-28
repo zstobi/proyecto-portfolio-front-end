@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Projects } from 'src/app/models/projects';
+import { EditToastService } from 'src/app/services/edit-toast.service';
 import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class EditProjectComponent {
   constructor(
     private prjsSvce: ProjectsService,
     private activatedRouter: ActivatedRoute,
-    private router: Router 
+    private router: Router,
+    private editToastSvce: EditToastService
   ) {
 
   }
@@ -35,8 +37,10 @@ export class EditProjectComponent {
     const id = this.activatedRouter.snapshot.params['id'];
     this.prjsSvce.updatePrjs(id, this.prjs).subscribe({
       next: (data) => {
-      alert('succesfully updated!');
-      this.router.navigate(['']);
+        this.editToastSvce.editToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },1500)
       },
       error: (err) => {
       alert('updating failed');

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Education } from 'src/app/models/education';
+import { EditToastService } from 'src/app/services/edit-toast.service';
 import { EducationService } from 'src/app/services/education.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class EditEducationComponent implements OnInit {
   constructor(
     private edSvce: EducationService,
     private activatedRouter: ActivatedRoute,
-    private router: Router 
+    private router: Router,
+    private editToastSvce: EditToastService
   ) {
 
   }
@@ -35,8 +37,10 @@ export class EditEducationComponent implements OnInit {
     const id = this.activatedRouter.snapshot.params['id'];
     this.edSvce.updateEd(id, this.ed).subscribe({
       next: (data) => {
-      alert('succesfully updated!');
-      this.router.navigate(['']);
+        this.editToastSvce.editToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },1500)
       },
       error: (err) => {
       alert('updating failed');

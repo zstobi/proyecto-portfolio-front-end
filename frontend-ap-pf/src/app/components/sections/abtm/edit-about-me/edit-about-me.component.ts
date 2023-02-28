@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AboutMe } from 'src/app/models/aboutme';
 import { AboutmeService } from 'src/app/services/aboutme.service';
+import { EditToastService } from 'src/app/services/edit-toast.service';
 
 @Component({
   selector: 'app-edit-about-me',
@@ -14,7 +15,8 @@ export class EditAboutMeComponent {
   constructor(
     private abtmSvce: AboutmeService,
     private activatedRouter: ActivatedRoute,
-    private router: Router 
+    private router: Router,
+    private editToastSvce: EditToastService
   ) {
 
   }
@@ -35,8 +37,10 @@ export class EditAboutMeComponent {
     const id = this.activatedRouter.snapshot.params['id'];
     this.abtmSvce.updateAbtm(id, this.abtm).subscribe({
       next: (data) => {
-      alert('succesfully updated!');
-      this.router.navigate(['']);
+        this.editToastSvce.editToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },1500)
       },
       error: (err) => {
       alert('updating failed');

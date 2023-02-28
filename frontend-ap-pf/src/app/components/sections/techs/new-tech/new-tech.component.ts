@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Techs } from 'src/app/models/techs';
+import { AddToastService } from 'src/app/services/add-toast.service';
 import { TechsService } from 'src/app/services/techs.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class NewTechComponent {
   
   constructor(
     private tsSvce: TechsService,
-    private router:Router
+    private router:Router,
+    private addToastSvce: AddToastService
   ){}
 
   ngOnInit():void {
@@ -25,8 +27,10 @@ export class NewTechComponent {
     const ts = new Techs(this.tsTitle, this.percentage);
     this.tsSvce.saveTech(ts).subscribe(
       data=>{
-        alert("tech succesfully added");
-        this.router.navigate(['']);
+        this.addToastSvce.addToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },1500)
       }, err=>{
         alert("failed");
         this.router.navigate(['']);

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Techs } from 'src/app/models/techs';
+import { EditToastService } from 'src/app/services/edit-toast.service';
 import { TechsService } from 'src/app/services/techs.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class EditTechComponent {
   constructor(
     private tsSvce: TechsService,
     private activatedRouter: ActivatedRoute,
-    private router: Router 
+    private router: Router,
+    private editToastSvce: EditToastService 
   ) {
 
   }
@@ -35,8 +37,10 @@ export class EditTechComponent {
     const id = this.activatedRouter.snapshot.params['id'];
     this.tsSvce.updateTech(id, this.ts).subscribe({
       next: (data) => {
-      alert('succesfully updated!');
-      this.router.navigate(['']);
+        this.editToastSvce.editToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },1500)
       },
       error: (err) => {
       alert('updating failed');

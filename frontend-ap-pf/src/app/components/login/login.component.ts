@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Credentials } from 'src/app/models/credentials';
 import { LoginFormService } from 'src/app/services/login-form.service';
+import { WelcomeToastService } from 'src/app/services/welcome-toast.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent {
 
   constructor (
     private loginSvce: LoginFormService,
-    private router: Router
+    private router: Router,
+    private welToastSvce: WelcomeToastService
     ) {
       this.obligatedLogout();
     }
@@ -27,7 +29,10 @@ export class LoginComponent {
 
     this.loginSvce.login(this.creds)
       .subscribe(response => {
-        this.router.navigate(['']);
+        this.welToastSvce.welcomeToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },1500)
       })
   }
 

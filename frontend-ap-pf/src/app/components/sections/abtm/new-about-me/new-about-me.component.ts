@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AboutMe } from 'src/app/models/aboutme';
 import { AboutmeService } from 'src/app/services/aboutme.service';
+import { AddToastService } from 'src/app/services/add-toast.service';
 
 @Component({
   selector: 'app-new-about-me',
@@ -13,7 +14,8 @@ export class NewAboutMeComponent {
   
   constructor(
     private abtmSvce: AboutmeService,
-    private router:Router
+    private router:Router,
+    private addToastSvce: AddToastService
   ){}
 
   ngOnInit():void {
@@ -24,8 +26,10 @@ export class NewAboutMeComponent {
     const abtm = new AboutMe(this.abtmContent);
     this.abtmSvce.saveAbtm(abtm).subscribe(
       data=>{
-        alert("succesfully added");
-        this.router.navigate(['']);
+        this.addToastSvce.addToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },1500)
       }, err=>{
         alert("failed");
         this.router.navigate(['']);

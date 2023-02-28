@@ -109,3 +109,9 @@ a:hover {
     word-break: break-all;
     /* word-wrap: break-word; */
 }
+
+@media (max-width : 450px) {
+    .responsiveToast {
+        width: 300px;
+    }
+}

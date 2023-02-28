@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SoftSkills } from 'src/app/models/softskills';
+import { AddToastService } from 'src/app/services/add-toast.service';
 import { SoftskillsService } from 'src/app/services/softskills.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class NewSoftSkillComponent implements OnInit {
   
   constructor(
     private ssSvce: SoftskillsService,
-    private router:Router
+    private router:Router,
+    private addToastSvce: AddToastService
   ){}
 
   ngOnInit():void {
@@ -24,8 +26,10 @@ export class NewSoftSkillComponent implements OnInit {
     const ss = new SoftSkills(this.ssTitle);
     this.ssSvce.saveSS(ss).subscribe(
       data=>{
-        alert("ss succesfully added");
-        this.router.navigate(['']);
+        this.addToastSvce.addToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },1500)
       }, err=>{
         alert("failed");
         this.router.navigate(['']);

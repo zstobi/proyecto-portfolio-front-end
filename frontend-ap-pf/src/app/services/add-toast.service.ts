@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class DeleteToastService {
+export class AddToastService {
 
   constructor() { }
 
-  deleteToast(){
+  addToast(){
     
     // toast creation
 
@@ -29,12 +29,12 @@ export class DeleteToastService {
 
     const toastTitle = document.createElement('STRONG');
     toastTitle.classList.add('me-auto');
-    toastTitle.textContent = 'Eliminado';
-    toastTitle.style.color = '#ff0000';
+    toastTitle.textContent = 'Agregado';
+    toastTitle.style.color = '#006e09';
 
     const toastBody = document.createElement('DIV');
     toastBody.classList.add('toast-body');
-    toastBody.textContent = 'Segmento eliminado correctamente!';
+    toastBody.textContent = 'Segmento agregado correctamente!';
 
     // toast parenting
 
@@ -48,6 +48,6 @@ export class DeleteToastService {
 
     setTimeout(()=>{
       document.body.removeChild(toast);
-    },2000);
+    },1500);
   }
 }
