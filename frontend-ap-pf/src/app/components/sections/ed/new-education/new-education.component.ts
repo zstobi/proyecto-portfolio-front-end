@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Education } from 'src/app/models/education';
 import { AddToastService } from 'src/app/services/add-toast.service';
 import { EducationService } from 'src/app/services/education.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 
 @Component({
   selector: 'app-new-education',
@@ -16,7 +17,8 @@ export class NewEducationComponent implements OnInit {
   constructor(
     private edSvce: EducationService,
     private router:Router,
-    private addToastSvce: AddToastService
+    private addToastSvce: AddToastService,
+    private errToastSvce: ErrorToastService
   ){}
 
   ngOnInit():void {
@@ -32,8 +34,10 @@ export class NewEducationComponent implements OnInit {
           this.router.navigate(['']);
         },1500)
       }, err=>{
-        alert("failed");
-        this.router.navigate(['']);
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },2000)
       }
     )
   }

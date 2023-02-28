@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AboutMe } from 'src/app/models/aboutme';
 import { AboutmeService } from 'src/app/services/aboutme.service';
 import { EditToastService } from 'src/app/services/edit-toast.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 
 @Component({
   selector: 'app-edit-about-me',
@@ -16,7 +17,8 @@ export class EditAboutMeComponent {
     private abtmSvce: AboutmeService,
     private activatedRouter: ActivatedRoute,
     private router: Router,
-    private editToastSvce: EditToastService
+    private editToastSvce: EditToastService,
+    private errToastSvce: ErrorToastService
   ) {
 
   }
@@ -27,8 +29,10 @@ export class EditAboutMeComponent {
       data => {
         this.abtm = data;
       }, err => {
-        alert('updating failed');
-        this.router.navigate(['']);
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },2000)
       }
     )
   }
@@ -43,8 +47,10 @@ export class EditAboutMeComponent {
         },1500)
       },
       error: (err) => {
-      alert('updating failed');
-      this.router.navigate(['']);
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },2000)
       }
       });
   }

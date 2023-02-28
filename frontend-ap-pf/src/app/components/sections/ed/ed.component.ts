@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Education } from 'src/app/models/education';
 import { DeleteToastService } from 'src/app/services/delete-toast.service';
 import { EducationService } from 'src/app/services/education.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 
 @Component({
   selector: 'app-ed',
@@ -15,7 +16,8 @@ export class EdComponent implements OnInit {
   constructor(
     private router: Router,
     private edSvce: EducationService,
-    private delToastSvce: DeleteToastService
+    private delToastSvce: DeleteToastService,
+    private errToastSvce: ErrorToastService
   ) {}
 
   ngOnInit(){
@@ -43,7 +45,10 @@ export class EdComponent implements OnInit {
           this.delToastSvce.deleteToast();
         },
         error: (err) => {
-        alert('it failed');
+          this.errToastSvce.errorToast();
+          setTimeout(()=>{
+            this.router.navigate(['']);
+          },2000)
         }
         });
     }

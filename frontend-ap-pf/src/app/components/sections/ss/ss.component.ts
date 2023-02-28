@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SoftSkills } from 'src/app/models/softskills';
 import { DeleteToastService } from 'src/app/services/delete-toast.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 import { SoftskillsService } from 'src/app/services/softskills.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class SsComponent implements OnInit {
   constructor(
     private router: Router,
     private ssSvce: SoftskillsService,
-    private delToastSvce: DeleteToastService
+    private delToastSvce: DeleteToastService,
+    private errToastSvce: ErrorToastService
   ) {}
 
   ngOnInit(){
@@ -43,7 +45,10 @@ export class SsComponent implements OnInit {
           this.delToastSvce.deleteToast();
         },
         error: (err) => {
-        alert('it failed');
+          this.errToastSvce.errorToast();
+          setTimeout(()=>{
+            this.router.navigate(['']);
+          },2000)
         }
         });
     }

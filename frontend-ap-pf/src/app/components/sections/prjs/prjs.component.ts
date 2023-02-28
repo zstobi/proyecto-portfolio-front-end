@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Projects } from 'src/app/models/projects';
 import { DeleteToastService } from 'src/app/services/delete-toast.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
@@ -11,11 +12,13 @@ import { ProjectsService } from 'src/app/services/projects.service';
 })
 export class PrjsComponent {
   prjs:Projects[] = [];
+  active = false;
 
   constructor(
     private router: Router,
     private prjsSvce: ProjectsService,
-    private delToastSvce: DeleteToastService
+    private delToastSvce: DeleteToastService,
+    private errToastSvce: ErrorToastService
   ) {}
 
   ngOnInit(){
@@ -43,9 +46,22 @@ export class PrjsComponent {
           this.delToastSvce.deleteToast();
         },
         error: (err) => {
-        alert('it failed');
+          this.errToastSvce.errorToast();
+          setTimeout(()=>{
+            this.router.navigate(['']);
+          },2000)
         }
         });
+    }
+  }
+
+  checked(){
+    const chk:HTMLInputElement = document.querySelector('#ocultar');
+    const carrousel:HTMLDivElement = document.querySelector('.carrousel');
+    if (chk.checked){
+      carrousel.style.display = 'none';
+    } else {
+      carrousel.style.display = 'block';
     }
   }
 }

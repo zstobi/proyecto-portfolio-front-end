@@ -4,6 +4,7 @@ import { AboutMe } from 'src/app/models/aboutme';
 import { AboutmeService } from 'src/app/services/aboutme.service';
 import { MatDialog } from  '@angular/material/dialog';
 import { DeleteToastService } from 'src/app/services/delete-toast.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 
 @Component({
   selector: 'app-abtm',
@@ -18,7 +19,8 @@ export class AbtmComponent {
     private router: Router,
     private abtmSvce: AboutmeService,
     private delToastSvce: DeleteToastService,
-    private dialogRef: MatDialog
+    private dialogRef: MatDialog,
+    private errToastSvce: ErrorToastService
   ) {}
 
   ngOnInit(){
@@ -46,7 +48,10 @@ export class AbtmComponent {
           this.delToastSvce.deleteToast();
         },
         error: (err) => {
-        alert('it failed');
+          this.errToastSvce.errorToast();
+          setTimeout(()=>{
+            this.router.navigate(['']);
+          },2000)
         }
         });
     }

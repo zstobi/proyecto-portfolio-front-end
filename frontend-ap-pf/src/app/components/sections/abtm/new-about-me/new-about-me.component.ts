@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AboutMe } from 'src/app/models/aboutme';
 import { AboutmeService } from 'src/app/services/aboutme.service';
 import { AddToastService } from 'src/app/services/add-toast.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 
 @Component({
   selector: 'app-new-about-me',
@@ -15,7 +16,8 @@ export class NewAboutMeComponent {
   constructor(
     private abtmSvce: AboutmeService,
     private router:Router,
-    private addToastSvce: AddToastService
+    private addToastSvce: AddToastService,
+    private errToastSvce: ErrorToastService
   ){}
 
   ngOnInit():void {
@@ -31,8 +33,10 @@ export class NewAboutMeComponent {
           this.router.navigate(['']);
         },1500)
       }, err=>{
-        alert("failed");
-        this.router.navigate(['']);
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },2000)
       }
     )
   }

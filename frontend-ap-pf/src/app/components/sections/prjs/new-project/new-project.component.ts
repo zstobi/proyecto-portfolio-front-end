@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Projects } from 'src/app/models/projects';
 import { AddToastService } from 'src/app/services/add-toast.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class NewProjectComponent {
   constructor(
     private prjsSvce: ProjectsService,
     private router:Router,
-    private addToastSvce: AddToastService
+    private addToastSvce: AddToastService,
+    private errToastSvce: ErrorToastService
   ){}
 
   ngOnInit():void {
@@ -33,8 +35,10 @@ export class NewProjectComponent {
           this.router.navigate(['']);
         },1500)
       }, err=>{
-        alert("failed");
-        this.router.navigate(['']);
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },2000)
       }
     )
   }

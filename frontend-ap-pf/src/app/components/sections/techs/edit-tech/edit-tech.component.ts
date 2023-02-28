@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Techs } from 'src/app/models/techs';
 import { EditToastService } from 'src/app/services/edit-toast.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 import { TechsService } from 'src/app/services/techs.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class EditTechComponent {
     private tsSvce: TechsService,
     private activatedRouter: ActivatedRoute,
     private router: Router,
-    private editToastSvce: EditToastService 
+    private editToastSvce: EditToastService,
+    private errToastSvce: ErrorToastService
   ) {
 
   }
@@ -27,8 +29,10 @@ export class EditTechComponent {
       data => {
         this.ts = data;
       }, err => {
-        alert('updating failed');
-        this.router.navigate(['']);
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },2000)
       }
     )
   }
@@ -43,8 +47,10 @@ export class EditTechComponent {
         },1500)
       },
       error: (err) => {
-      alert('updating failed');
-      this.router.navigate(['']);
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },2000)
       }
       });
   }

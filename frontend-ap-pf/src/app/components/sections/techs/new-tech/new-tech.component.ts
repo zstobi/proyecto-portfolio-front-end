@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Techs } from 'src/app/models/techs';
 import { AddToastService } from 'src/app/services/add-toast.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 import { TechsService } from 'src/app/services/techs.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class NewTechComponent {
   constructor(
     private tsSvce: TechsService,
     private router:Router,
-    private addToastSvce: AddToastService
+    private addToastSvce: AddToastService,
+    private errToastSvce: ErrorToastService
   ){}
 
   ngOnInit():void {
@@ -32,8 +34,10 @@ export class NewTechComponent {
           this.router.navigate(['']);
         },1500)
       }, err=>{
-        alert("failed");
-        this.router.navigate(['']);
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },2000)
       }
     )
   }

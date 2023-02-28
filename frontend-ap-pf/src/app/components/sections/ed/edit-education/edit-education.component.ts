@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Education } from 'src/app/models/education';
 import { EditToastService } from 'src/app/services/edit-toast.service';
 import { EducationService } from 'src/app/services/education.service';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 
 @Component({
   selector: 'app-edit-education',
@@ -16,7 +17,8 @@ export class EditEducationComponent implements OnInit {
     private edSvce: EducationService,
     private activatedRouter: ActivatedRoute,
     private router: Router,
-    private editToastSvce: EditToastService
+    private editToastSvce: EditToastService,
+    private errToastSvce: ErrorToastService
   ) {
 
   }
@@ -27,8 +29,10 @@ export class EditEducationComponent implements OnInit {
       data => {
         this.ed = data;
       }, err => {
-        alert('updating failed');
-        this.router.navigate(['']);
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },2000)
       }
     )
   }
@@ -43,8 +47,10 @@ export class EditEducationComponent implements OnInit {
         },1500)
       },
       error: (err) => {
-      alert('updating failed');
-      this.router.navigate(['']);
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },2000)
       }
       });
   }
