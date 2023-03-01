@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Projects } from 'src/app/models/projects';
 import { DeleteToastService } from 'src/app/services/delete-toast.service';
 import { ErrorToastService } from 'src/app/services/error-toast.service';
@@ -12,7 +12,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
 })
 export class PrjsComponent {
   prjs:Projects[] = [];
-  active = false;
+
 
   constructor(
     private router: Router,
@@ -52,16 +52,6 @@ export class PrjsComponent {
           },2000)
         }
         });
-    }
-  }
-
-  checked(){
-    const chk:HTMLInputElement = document.querySelector('#ocultar');
-    const carrousel:HTMLDivElement = document.querySelector('.carrousel');
-    if (chk.checked){
-      carrousel.style.display = 'none';
-    } else {
-      carrousel.style.display = 'block';
     }
   }
 }
