@@ -31,7 +31,6 @@ import { NewTechComponent } from './components/sections/techs/new-tech/new-tech.
 import { EditTechComponent } from './components/sections/techs/edit-tech/edit-tech.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DeleteToastService } from './services/delete-toast.service';
 
 @NgModule({
   declarations: [

@@ -12,7 +12,7 @@ import { ErrorToastService } from 'src/app/services/error-toast.service';
 })
 export class NewAboutMeComponent {
   abtmContent:string = '';
-  
+
   constructor(
     private abtmSvce: AboutmeService,
     private router:Router,
@@ -21,7 +21,6 @@ export class NewAboutMeComponent {
   ){}
 
   ngOnInit():void {
-
   }
 
   addAboutMe(): void {

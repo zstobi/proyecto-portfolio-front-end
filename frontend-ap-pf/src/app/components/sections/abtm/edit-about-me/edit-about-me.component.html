@@ -12,7 +12,7 @@
         <div class="btns-field">
             <button type="button" class="btn btn-secondary closeBtn" routerLink="">Cancelar</button>
 
-            <button type="submit" class="btn btn-dark">Actualizar</button>
+            <button type="submit" class="btn btn-dark" *ngIf="abtm.abtmContent.length != 0 && abtm.abtmContent.length >=20 && abtm.abtmContent.length <=1000 ">Actualizar</button>
         </div>
 
     </form>

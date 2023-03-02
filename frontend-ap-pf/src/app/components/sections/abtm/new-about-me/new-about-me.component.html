@@ -11,8 +11,8 @@
 
         <div class="btns-field">
             <button type="button" class="btn btn-secondary closeBtn" routerLink="">Cancelar</button>
-
-            <button type="submit" class="btn btn-dark">Agregar</button>
+            
+            <button id="addBtn" type="submit" class="btn btn-dark" *ngIf="abtmContent.length != 0 && abtmContent.length >=20 && abtmContent.length <=1000 ">Agregar</button>
         </div>
 
     </form>
