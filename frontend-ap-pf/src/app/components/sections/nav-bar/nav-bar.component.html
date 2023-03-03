@@ -11,18 +11,11 @@
           <li class="nav-item default-select"> Argentina Programa: #YoProgramo </li>
         </ul>
         <div class="d-flex">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 list-inline">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 list-inline" style="gap: 15px;">
             <li class="list-inline-item">
-              <a class="navbar" href="#">
-                <!-- <img src="lkn.png" alt=""> -->
-                Linkedin
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="navbar" href="#">
-                <!-- <img src="gh.png" alt="" height="25px" width="25px"> -->
-                GitHub
-              </a>
+              <button class="btn btn-outline-dark" (click)="links()">
+              Redes
+              </button>
             </li>
             <li class="list-inline-item">
               <button type="button" class="btn btn-dark" (click)="login()" *ngIf="getToken() == null">Log In</button>

@@ -5,6 +5,8 @@ nav {
 
 /* modifica la seleccion de la seccion izquierda del nav */
 .default-select {
+    color: #c4c4c4;
+
     cursor: default;
     user-select: none;
 }

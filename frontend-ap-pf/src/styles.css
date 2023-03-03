@@ -88,7 +88,7 @@ a:hover {
     width: 23px;
     height: 23px;
 }
-.icon:active{
+.icon:active, .shaking:active{
     color: #00f;
     animation: shake 200ms;
 }
@@ -110,8 +110,7 @@ a:hover {
 }
 
 .noLongWord {
-    word-break: break-all;
-    /* word-wrap: break-word; */
+    text-align: justify;
 }
 
 @media (max-width : 450px) {
@@ -133,4 +132,9 @@ a:hover {
 .btns-field {
     display: flex;
     gap: 15px;
+}
+
+/* no margin class */
+.noMargin {
+    margin: 0!important;
 }
