@@ -7,10 +7,12 @@
 
         <div class="input-field">
             <input type="text" name="edTitle" id="edTitle" autocomplete="off" placeholder="ingresar título" [(ngModel)]="edTitle" required>
+            <small style="color: #c4c4c4;" *ngIf="edTitle.length < 3">Mín. 3 caracteres</small>
         </div>
 
         <div class="input-field">
             <textarea class="content-field" type="text" name="edContent" id="edContent" autocomplete="off" placeholder="ingresar contenido" [(ngModel)]="edContent" required></textarea>
+            <small style="color: #c4c4c4;" *ngIf="edContent.length < 10">Mín. 10 caracteres</small>
         </div>
 
         <div class="btns-field">

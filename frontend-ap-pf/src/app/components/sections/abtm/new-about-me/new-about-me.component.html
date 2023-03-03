@@ -2,11 +2,11 @@
     <div class="form-banner"></div>
 
     <form class="card-body" #form="ngForm" (ngSubmit)="addAboutMe()" novalidate>
-
-        <h5 class="card-title">Nuevo Acerca de Mi</h5>
+        <h5 class="card-title" style="margin: 0;">Nuevo Acerca de Mi</h5>          
 
         <div class="input-field">
             <textarea class="content-field" type="text" name="abtmContent" id="abtmContent" autocomplete="off" placeholder="ingresar contenido" [(ngModel)]="abtmContent" required></textarea>
+            <small style="color: #c4c4c4;" *ngIf="abtmContent.length < 20">Mín. 20 caracteres</small>
         </div>
 
         <div class="btns-field">

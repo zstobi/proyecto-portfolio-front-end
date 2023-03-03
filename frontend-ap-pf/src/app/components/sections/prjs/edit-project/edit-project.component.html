@@ -7,14 +7,17 @@
 
         <div class="input-field">
             <input type="text" name="prjsTitle" id="prjsTitle" autocomplete="off" placeholder="ingresar título" [(ngModel)]="prjs.prjsTitle" required>
+            <small style="color: #c4c4c4;" *ngIf="prjs.prjsTitle.length < 3">Mín. 3 caracteres</small>
         </div>
 
         <div class="input-field">
             <textarea class="content-field" type="text" name="prjsContent" id="prjsContent" autocomplete="off" placeholder="ingresar contenido" [(ngModel)]="prjs.prjsContent" required></textarea>
+            <small style="color: #c4c4c4;" *ngIf="prjs.prjsContent.length < 10">Mín. 10 caracteres</small>
         </div>
 
         <div class="input-field">
             <input type="text" name="link" id="link" autocomplete="off" placeholder="link al repositorio" [(ngModel)]="prjs.link">
+            <small style="color: #c4c4c4;" *ngIf="prjs.link.length == 0">Opcional</small>
         </div>
 
         <div class="btns-field">

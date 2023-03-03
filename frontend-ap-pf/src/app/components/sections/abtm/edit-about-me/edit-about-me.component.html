@@ -7,6 +7,7 @@
 
         <div class="input-field">
             <textarea class="content-field" type="text" name="abtmContent" id="abtmContent" autocomplete="off" placeholder="ingresar contenido" [(ngModel)]="abtm.abtmContent" required></textarea>
+            <small style="color: #c4c4c4;" *ngIf="abtm.abtmContent.length < 20">Mín. 20 caracteres</small>
         </div>
 
         <div class="btns-field">

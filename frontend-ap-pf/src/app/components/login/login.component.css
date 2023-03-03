@@ -41,9 +41,7 @@ input {
     border-bottom: 1.5px solid #000;
     border-right: 1.5px solid #000;
 }
-input:active {
-    /* empty yet */
-}
+
 input:focus {
     outline: 1px solid #000;
     color: #00f;
@@ -66,7 +64,7 @@ input:focus {
     }
 }
 
-/* @keyframes test {
-    100% {
-    }
-} */
+.btns-field {
+    display: flex;
+    gap: 5px;
+}

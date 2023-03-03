@@ -48,6 +48,6 @@ export class ErrorToastService {
 
     setTimeout(()=>{
       document.body.removeChild(toast);
-    },2000);
+    },3000);
   }
 }

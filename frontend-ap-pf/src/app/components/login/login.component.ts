@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Credentials } from 'src/app/models/credentials';
+import { ErrorToastService } from 'src/app/services/error-toast.service';
 import { LoginFormService } from 'src/app/services/login-form.service';
 import { WelcomeToastService } from 'src/app/services/welcome-toast.service';
 
@@ -19,7 +20,8 @@ export class LoginComponent {
   constructor (
     private loginSvce: LoginFormService,
     private router: Router,
-    private welToastSvce: WelcomeToastService
+    private welToastSvce: WelcomeToastService,
+    private errToastSvce: ErrorToastService
     ) {
       this.obligatedLogout();
     }
@@ -33,6 +35,11 @@ export class LoginComponent {
         setTimeout(()=>{
           this.router.navigate(['']);
         },1500)
+      }, err=>{
+        this.errToastSvce.errorToast();
+        setTimeout(()=>{
+          this.router.navigate(['']);
+        },3000)
       })
   }
 

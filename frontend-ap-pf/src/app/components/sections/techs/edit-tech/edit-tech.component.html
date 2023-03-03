@@ -7,6 +7,7 @@
 
         <div class="input-field">
             <input type="text" name="tsTitle" id="tsTitle" autocomplete="off" placeholder="ingresar título" [(ngModel)]="ts.tsTitle" required>
+            <small style="color: #c4c4c4;" *ngIf="ts.tsTitle.length < 1">Mín. 1 caractér</small>
         </div>
 
         <div class="input-field">
