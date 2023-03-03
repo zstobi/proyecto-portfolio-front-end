@@ -30,7 +30,7 @@ export class LogoutToastService {
     const toastTitle = document.createElement('STRONG');
     toastTitle.classList.add('me-auto');
     toastTitle.textContent = 'Modo Edición Desactivado';
-    toastTitle.style.color = '#006e09';
+    toastTitle.style.color = '#009';
 
     const toastBody = document.createElement('DIV');
     toastBody.classList.add('toast-body');

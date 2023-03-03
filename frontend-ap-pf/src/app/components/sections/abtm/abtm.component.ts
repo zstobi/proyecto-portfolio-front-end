@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AboutMe } from 'src/app/models/aboutme';
 import { AboutmeService } from 'src/app/services/aboutme.service';
-import { MatDialog } from  '@angular/material/dialog';
 import { DeleteToastService } from 'src/app/services/delete-toast.service';
 import { ErrorToastService } from 'src/app/services/error-toast.service';
 
@@ -19,7 +18,6 @@ export class AbtmComponent {
     private router: Router,
     private abtmSvce: AboutmeService,
     private delToastSvce: DeleteToastService,
-    private dialogRef: MatDialog,
     private errToastSvce: ErrorToastService
   ) {}
 

@@ -88,6 +88,10 @@ a:hover {
     width: 23px;
     height: 23px;
 }
+.icon:active{
+    color: #00f;
+    animation: shake 200ms;
+}
 
 /* add design */
 .add {
@@ -114,4 +118,19 @@ a:hover {
     .responsiveToast {
         width: 300px;
     }
+}
+
+/* shake animation */
+
+@keyframes shake {
+    25% { transform: translateX(2px); }
+    50% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+/* btns spacing */
+
+.btns-field {
+    display: flex;
+    gap: 15px;
 }

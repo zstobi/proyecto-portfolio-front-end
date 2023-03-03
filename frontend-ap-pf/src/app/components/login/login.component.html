@@ -7,17 +7,19 @@
 
         <div class="input-field">
             <input type="text" name="user" id="user" autocomplete="off" placeholder="ingresar usuario" [(ngModel)]="creds.user">
+            <small style="color: #c4c4c4;" *ngIf="creds.user.length == 0 ">Campo necesario.</small>
         </div>
 
         <div class="input-field">
             <input type="password" name="password" id="password" autocomplete="off" placeholder="ingresar contraseña" [(ngModel)]="creds.password">
+            <small style="color: #c4c4c4;" *ngIf="creds.password.length == 0 ">Campo necesario.</small>
         </div>
 
         <div class="btns-field">
 
             <button type="button" class="btn btn-secondary closeBtn" routerLink="">Cancelar</button>
             
-            <button type="submit" class="btn btn-dark">Ingresar</button>
+            <button type="submit" class="btn btn-dark" *ngIf="creds.user.length != 0 && creds.password.length != 0">Ingresar</button>
             
         </div>
 

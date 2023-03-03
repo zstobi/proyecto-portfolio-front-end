@@ -50,7 +50,7 @@ export class EditProjectComponent {
         this.errToastSvce.errorToast();
         setTimeout(()=>{
           this.router.navigate(['']);
-        },2000)
+        },5000)
       }
       });
   }

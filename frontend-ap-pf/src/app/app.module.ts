@@ -17,7 +17,6 @@ import { NavBarComponent } from './components/sections/nav-bar/nav-bar.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './helpers/auth.interceptor';
-import { EditionModeComponent } from './components/edition-mode/edition-mode.component';
 import { NewEducationComponent } from './components/sections/ed/new-education/new-education.component';
 import { EditEducationComponent } from './components/sections/ed/edit-education/edit-education.component';
 import { NewAboutMeComponent } from './components/sections/abtm/new-about-me/new-about-me.component';
@@ -29,7 +28,6 @@ import { EditSoftSkillComponent } from './components/sections/ss/edit-soft-skill
 import { NewTechComponent } from './components/sections/techs/new-tech/new-tech.component';
 import { EditTechComponent } from './components/sections/techs/edit-tech/edit-tech.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -45,7 +43,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     FooterComponent,
     HeaderComponent,
     NavBarComponent,
-    EditionModeComponent,
     NewEducationComponent,
     EditEducationComponent,
     NewAboutMeComponent,
@@ -63,8 +60,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,
-    MatDialogModule
+    HttpClientModule
   ],
   providers: [
     {

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ErrorToastService {
+export class LoginErrorToastService {
 
   constructor() { }
 
@@ -30,11 +30,11 @@ export class ErrorToastService {
     const toastTitle = document.createElement('STRONG');
     toastTitle.classList.add('me-auto');
     toastTitle.textContent = 'Error';
-    toastTitle.style.color = '#001cb9';
+    toastTitle.style.color = '#d90429';
 
     const toastBody = document.createElement('DIV');
     toastBody.classList.add('toast-body');
-    toastBody.textContent = 'Probablemente hayas agregado un título ya existente. De no ser así, intente nuevamente en otro momento.';
+    toastBody.textContent = 'Los datos ingresados no son correctos.';
 
     // toast parenting
 
@@ -48,6 +48,6 @@ export class ErrorToastService {
 
     setTimeout(()=>{
       document.body.removeChild(toast);
-    },5000);
+    },3000);
   }
 }
