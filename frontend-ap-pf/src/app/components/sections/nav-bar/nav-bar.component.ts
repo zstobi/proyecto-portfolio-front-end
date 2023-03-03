@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LogoutToastService } from 'src/app/services/logout-toast.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,7 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit{
-  constructor (private router:Router) {}
+  constructor (
+    private router:Router,
+    private logoutToastSvce: LogoutToastService
+    ) {}
 
   ngOnInit():void {}
 
@@ -21,6 +25,7 @@ export class NavBarComponent implements OnInit{
 
   logout(){
     this.router.navigate(['']);
+    this.logoutToastSvce.logoutToast();
     localStorage.removeItem('token');
   }
 }

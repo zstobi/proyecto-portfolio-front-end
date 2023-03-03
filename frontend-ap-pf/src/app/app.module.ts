@@ -18,7 +18,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { EditionModeComponent } from './components/edition-mode/edition-mode.component';
-import { NavBarLogoutComponent } from './components/sections/nav-bar-logout/nav-bar-logout.component';
 import { NewEducationComponent } from './components/sections/ed/new-education/new-education.component';
 import { EditEducationComponent } from './components/sections/ed/edit-education/edit-education.component';
 import { NewAboutMeComponent } from './components/sections/abtm/new-about-me/new-about-me.component';
@@ -47,7 +46,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     HeaderComponent,
     NavBarComponent,
     EditionModeComponent,
-    NavBarLogoutComponent,
     NewEducationComponent,
     EditEducationComponent,
     NewAboutMeComponent,
