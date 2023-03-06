@@ -8,7 +8,7 @@ import { Education } from '../models/education';
 })
 export class EducationService {
 
-  educationUrl = 'http://localhost:8080/ed/';
+  educationUrl = 'https://apfinalbackend.onrender.com/ed/';
 
   constructor(private http: HttpClient) { }
 

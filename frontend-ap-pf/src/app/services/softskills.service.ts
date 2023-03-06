@@ -8,7 +8,7 @@ import { SoftSkills } from '../models/softskills';
 })
 export class SoftskillsService {
 
-  softskillsUrl = 'http://localhost:8080/ss/';
+  softskillsUrl = 'https://apfinalbackend.onrender.com/ss/';
 
   constructor(private http: HttpClient) { }
 

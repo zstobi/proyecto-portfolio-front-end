@@ -8,7 +8,7 @@ import { Techs } from '../models/techs';
 })
 export class TechsService {
 
-  techsUrl = 'http://localhost:8080/techs/';
+  techsUrl = 'https://apfinalbackend.onrender.com/techs/';
 
   constructor(private http: HttpClient) { }
 

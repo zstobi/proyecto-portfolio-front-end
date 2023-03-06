@@ -8,7 +8,7 @@ import { Projects } from '../models/projects';
 })
 export class ProjectsService {
 
-  projectsUrl = 'http://localhost:8080/prjs/';
+  projectsUrl = 'https://apfinalbackend.onrender.com/prjs/';
 
   constructor(private http: HttpClient) { }
 

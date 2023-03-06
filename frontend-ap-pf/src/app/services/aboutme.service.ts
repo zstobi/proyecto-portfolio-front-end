@@ -8,7 +8,7 @@ import { AboutMe } from '../models/aboutme';
 })
 export class AboutmeService {
 
-  aboutmeUrl = 'http://localhost:8080/abtm/';
+  aboutmeUrl = 'https://apfinalbackend.onrender.com/abtm/';
 
   constructor(private http: HttpClient) { }
 

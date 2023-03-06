@@ -12,12 +12,12 @@ export class LoginFormService {
   constructor(private http: HttpClient) { }
 
   // aca iria el codigo para obtener datos desde el back
-  getWorkingConfirmation(): Observable<WorkingConfirmation>{
-    return this.http.get<WorkingConfirmation>('http://localhost:8080/api/test');
-  }
+  // getWorkingConfirmation(): Observable<WorkingConfirmation>{
+  //   return this.http.get<WorkingConfirmation>('http://localhost:8080/api/test');
+  // }
 
   login(creds: Credentials) {
-    return this.http.post('http://localhost:8080/login',creds, {
+    return this.http.post('https://apfinalbackend.onrender.com/login',creds, {
       observe: 'response'
     }).pipe(map((response: HttpResponse<any>) => {
       const body = response.body;

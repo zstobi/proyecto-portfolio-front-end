@@ -38,9 +38,9 @@ export class LoginComponent {
         },1500)
       }, err=>{
         this.errToastSvce.errorToast();
-        setTimeout(()=>{
-          this.router.navigate(['']);
-        },3000)
+        // setTimeout(()=>{
+        //   this.router.navigate(['']);
+        // },3000)
       })
   }
 
